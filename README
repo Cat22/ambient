@@ -1,3 +1,7 @@
+**********************************************
+ambient - 06/06/2020
+**********************************************
+
 ambient is a program designed to read 1 or more
 usb TemperGold v3.1 tempresature sensors
 
@@ -33,11 +37,21 @@ udev:
 
   You an modify some parameters by editing ambient.h:
 
-// temperatures in degrees F that define the text color output
+**********************************************
+// room temperatures in degrees F that define the text color output
 #define COLD   60.0
 #define COOL   65.0
 #define WARM   70.0
 #define HOT    75.0
+
+// if you change these make **sure** you include 
+the format char '%d' somewhere in the name
+char *by_day_file_fmt   = "by_day-%d.dat";
+char *by_week_file_fmt  = "by_week-%d.dat";
+char *by_month_file_fmt = "by_month-%d.dat";
+int enable_graphing = true;
+int enable_multi_plot = true; // most of the time this is fine, even for a single sensor
+**********************************************
 
 contact info:
   I can be reacehd at ambient@raindawn.com
