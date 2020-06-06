@@ -51,7 +51,8 @@ pthread_mutex_t plot_mutex = PTHREAD_MUTEX_INITIALIZER;
 #define WARM   70.0
 #define HOT    75.0
 
-// if you change these make **sure** you include the %d somewhere in the name
+// if you change these make **sure** you include the 
+// format char "%d" somewhere in the name string
 char *by_day_file_fmt   = "by_day-%d.dat";
 char *by_week_file_fmt  = "by_week-%d.dat";
 char *by_month_file_fmt = "by_month-%d.dat";
