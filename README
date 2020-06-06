@@ -1,0 +1,34 @@
+ambient is a program designed to read 1 or more
+usb TemperGold v3.1 tempresature sensors
+
+
+Requirements:
+gcc (should be gcc version greater than 4 and preferably
+greater than 8)
+pthreads library support
+udev libs and the udev development library usually
+something like (in your software install choices)
+udev
+libudev-devel
+autotools v 2.69 or newer
+
+To build ambient:
+./autogen.sh
+./configure
+make
+Note: I left out make install because you can just copy
+the ambient executable (in src/) where you like. remember
+that ambient will create data files and a png image in the
+same directory so take that into consideration
+
+udev:
+  copy the below rule to /etc/udev/rules.d
+  This will make the hidraw(s) you need to run ambient
+  read/write from user space. Otherwise you will have to
+  run ambient as root.
+  once you have the rule in rules.d either retrigger the udev
+  hidraw or reboot:
+  udevadm trigger --verbose --type devices -s hidraw
+
+contact info:
+  I can be reacehd at ambient@raindawn.com
