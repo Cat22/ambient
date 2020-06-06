@@ -11,6 +11,7 @@ something like (in your software install choices)
 udev
 libudev-devel
 autotools v 2.69 or newer
+gnuplot
 
 To build ambient:
 ./autogen.sh
@@ -29,6 +30,14 @@ udev:
   once you have the rule in rules.d either retrigger the udev
   hidraw or reboot:
   udevadm trigger --verbose --type devices -s hidraw
+
+  You an modify some parameters by editing ambient.h:
+
+// temperatures in degrees F that define the text color output
+#define COLD   60.0
+#define COOL   65.0
+#define WARM   70.0
+#define HOT    75.0
 
 contact info:
   I can be reacehd at ambient@raindawn.com
