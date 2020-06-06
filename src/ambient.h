@@ -25,12 +25,6 @@
 #define ANSI_BG_ORANGE      "\x1b[30;43m"
 #define ANSI_BG_RED         "\x1b[37;41m"
 
-// temperatures that define the text color output
-#define COLD   60.0
-#define COOL   65.0
-#define WARM   70.0
-#define HOT    75.0
-
 #define HIDE_CURSOR  0
 #define SHOW_CURSOR  1
 
@@ -50,11 +44,20 @@ pthread_mutex_t plot_mutex = PTHREAD_MUTEX_INITIALIZER;
 ////////////////////////////////////////////////////////////////
 ////////////// user changeable variables ///////////////////////
 ////////////////////////////////////////////////////////////////
+
+// temperatures that define the text color output
+#define COLD   60.0
+#define COOL   65.0
+#define WARM   70.0
+#define HOT    75.0
+
+// if you change these make **sure** you include the %d somewhere in the name
 char *by_day_file_fmt   = "by_day-%d.dat";
 char *by_week_file_fmt  = "by_week-%d.dat";
 char *by_month_file_fmt = "by_month-%d.dat";
 int enable_graphing = true;
 int enable_multi_plot = true; // most of the time this is fine, even for a single sensor
+
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
